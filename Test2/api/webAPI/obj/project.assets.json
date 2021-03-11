@@ -5001,11 +5001,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\interview\\Test2\\webAPI\\webAPI\\webAPI.csproj",
+      "projectUniqueName": "D:\\interview\\Test2\\api\\webAPI\\webAPI.csproj",
       "projectName": "webAPI",
-      "projectPath": "D:\\interview\\Test2\\webAPI\\webAPI\\webAPI.csproj",
+      "projectPath": "D:\\interview\\Test2\\api\\webAPI\\webAPI.csproj",
       "packagesPath": "C:\\Users\\Quan Tran\\.nuget\\packages\\",
-      "outputPath": "D:\\interview\\Test2\\webAPI\\webAPI\\obj\\",
+      "outputPath": "D:\\interview\\Test2\\api\\webAPI\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Quan Tran\\AppData\\Roaming\\NuGet\\NuGet.Config",

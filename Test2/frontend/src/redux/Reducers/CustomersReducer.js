@@ -1,11 +1,9 @@
-import React, { Component } from 'react'
+let stateDefault = {};
 
-export default class CustomersReducer extends Component {
-    render() {
-        return (
-            <div>
-                {/* asdf */}
-            </div>
-        )
-    }
-}
+const Customers = (state = stateDefault, action) => {
+  switch (action.type) {
+    default:
+      return { ...state };
+  }
+};
+export default Customers;

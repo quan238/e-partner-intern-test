@@ -1,11 +1,12 @@
 import React, { Component } from "react";
 import "../Components/main.css";
+import Axios from "axios";
 export default class CustomerTable extends Component {
   render() {
     return (
       <div className="container " style={{ paddingTop: "100px" }}>
-        <table class="table">
-          <thead class="thead-dark">
+        <table className="table">
+          <thead className="thead-dark">
             <tr>
               <th scope="col">#</th>
               <th scope="col">Company Name</th>
@@ -24,9 +25,9 @@ export default class CustomerTable extends Component {
               <td>Mark</td>
               <td>Otto</td>
               <td>@mdo</td>
-              <td>Mark</td> 
-              <td>Mark</td> 
-              <td>Mark</td> 
+              <td>Mark</td>
+              <td>Mark</td>
+              <td>Mark</td>
               <td>Mark</td>
               <td>Mark</td>
             </tr>
@@ -34,19 +35,39 @@ export default class CustomerTable extends Component {
               <th scope="row">2</th>
               <td>Jacob</td>
               <td>Thornton</td>
-              <td>@fat</td> <td>Mark</td> <td>Mark</td> <td>Mark</td>{" "}
-              <td>Mark</td> <td>Mark</td>
+              <td>@fat</td>
+              <td>Mark</td>
+              <td>Mark</td>
+              <td>Mark</td>
+              <td>Mark</td>
+              <td>Mark</td>
             </tr>
             <tr>
               <th scope="row">3</th>
               <td>Larry</td>
               <td>the Bird</td>
-              <td>@twitter</td> <td>Mark</td> <td>Mark</td> <td>Mark</td>{" "}
-              <td>Mark</td> <td>Mark</td>
+              <td>@twitter</td>
+              <td>Mark</td>
+              <td>Mark</td>
+              <td>Mark</td>
+              <td>Mark</td>
+              <td>Mark</td>
             </tr>
           </tbody>
         </table>
       </div>
     );
+  }
+  componentDidMount() {
+    Axios({
+      method: "GET",
+      url: "https://localhost:5001/api/customer",
+    })
+      .then((res) => {
+        console.log(res);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   }
 }

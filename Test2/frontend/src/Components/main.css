@@ -20,3 +20,6 @@
 .table {
   background-color: white;
 }
+.tr{
+    cursor: pointer;
+}

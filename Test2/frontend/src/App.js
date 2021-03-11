@@ -3,16 +3,13 @@ import "./App.css";
 // import navbar from './Components/Navbar';
 import Navbar from "./Components/Navbar";
 import CustomersTable from "./Components/CustomerTable";
+import Content from "./Components/Content";
 
 function App() {
   return (
     <div>
       <Navbar></Navbar>
-      <div className="container" >
-        <div className="table mt-5">
-      <CustomersTable></CustomersTable>
-      </div>
-      </div>
+    <Content></Content>
     </div>
   );
 }

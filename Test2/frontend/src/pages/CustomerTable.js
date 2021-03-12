@@ -1,15 +1,13 @@
-import React, { Component, useState, useEffect } from "react";
-import "../Components/main.css";
+import React, { Component } from "react";
 import { connect } from "react-redux";
-import { FETCH_ALL, SORT_UP } from "../redux/Actions/type";
+import "../Components/main.css";
 import {
   fetchAllFunc,
   sortIdDown,
   sortIdUp,
   sortNameDown,
-  sortNameUp,
+  sortNameUp
 } from "../redux/Actions/User";
-import $ from "jquery";
 
 // import { DataTable } from "//cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js";
 class CustomerTable extends Component {
@@ -41,7 +39,7 @@ class CustomerTable extends Component {
                       document.getElementById("up_name").style.opacity = "1";
                     }}
                     id="up"
-                    class="fa fa-arrow-up"
+                    className="fa fa-arrow-up"
                     aria-hidden="true"
                   ></i>
                   <i
@@ -54,7 +52,7 @@ class CustomerTable extends Component {
                       document.getElementById("up_name").style.opacity = "1";
                       this.props.dispatch(sortIdDown());
                     }}
-                    class="fa fa-arrow-down"
+                    className="fa fa-arrow-down"
                     aria-hidden="true"
                   ></i>
                   {/* <i
@@ -79,7 +77,7 @@ class CustomerTable extends Component {
                     document.getElementById("up").style.opacity = "1";
                   }}
                   id="up_name"
-                  class="fa fa-arrow-up"
+                  className="fa fa-arrow-up"
                   aria-hidden="true"
                 ></i>
                 <i
@@ -92,7 +90,7 @@ class CustomerTable extends Component {
                     document.getElementById("up").style.opacity = "1";
                     this.props.dispatch(sortNameDown());
                   }}
-                  class="fa fa-arrow-down"
+                  className="fa fa-arrow-down"
                   aria-hidden="true"
                 ></i>
               </th>

@@ -95,13 +95,15 @@ const Customers = (state = stateDefault, action) => {
       //       .indexOf(action.value.toLowerCase()) !== -1
       //   );
       // });
+      const temparr = [...state.customers];
       const { value } = action;
-      const filtered = _.filter(state.customers, (o) =>
+      const filtered = _.filter(temparr, (o) =>
         _.toLower(o.companyName).includes(_.toLower(value))
       );
       console.log(filtered);
       // console.log(filtered);
-      state.customers = filtered;
+      // state.customers = filtered;
+      console.log("state", state.customers);
       return { ...state, filtered };
     }
     default:

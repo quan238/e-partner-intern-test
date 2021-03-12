@@ -25,7 +25,6 @@ class navbar extends Component {
               className="btn btn-outline-success my-2 my-sm-0"
               onClick={(e) => {
                 e.preventDefault();
-
                 this.props.searchCustomers(
                   document.getElementById("search").value
                 );

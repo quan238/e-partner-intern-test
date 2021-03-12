@@ -5,7 +5,7 @@ class CustomerService {
     return Axios({
       method: "GET",
       mimeType: "json",
-      url: "https://localhost:5001/api/Customer",
+      // url: "https://localhost:5001/api/Customer",
     });
   }
   getData = () => {

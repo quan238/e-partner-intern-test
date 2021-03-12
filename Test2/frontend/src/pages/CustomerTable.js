@@ -17,7 +17,7 @@ class CustomerTable extends Component {
   }
   render() {
     return (
-      <div className="container " style={{ paddingTop: "30px" }}>
+      <div className=" " style={{ paddingTop: "15px" }}>
         <table id="example" className="table">
           <thead>
             <tr>

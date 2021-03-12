@@ -1,6 +1,8 @@
 import React, { Component } from "react";
+import { connect } from "react-redux";
+import { SEARCH } from "../redux/Actions/type";
 
-export default class navbar extends Component {
+class navbar extends Component {
   render() {
     return (
       <div>
@@ -14,10 +16,16 @@ export default class navbar extends Component {
               type="search"
               placeholder="Search"
               aria-label="Search"
+              id="search"
             />
             <button
               className="btn btn-outline-success my-2 my-sm-0"
-              type="submit"
+              onClick={(e) => {
+                e.preventDefault();
+                this.props.searchCustomers(
+                  document.getElementById("search").value
+                );
+              }}
             >
               Search
             </button>
@@ -27,3 +35,14 @@ export default class navbar extends Component {
     );
   }
 }
+const mapDispatchToProps = (dispatch) => {
+  return {
+    searchCustomers: (value) => {
+      dispatch({
+        type: SEARCH,
+        value,
+      });
+    },
+  };
+};
+export default connect(null, mapDispatchToProps)(navbar);

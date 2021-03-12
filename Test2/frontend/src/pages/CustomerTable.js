@@ -2,8 +2,9 @@ import React, { Component, useState, useEffect } from "react";
 import "../Components/main.css";
 import { connect } from "react-redux";
 import { FETCH_ALL, SORT_UP } from "../redux/Actions/type";
-import { fetchAllFunc, SortUp } from "../redux/Actions/User";
+import { fetchAllFunc, sortIdDown, sortIdUp } from "../redux/Actions/User";
 import $ from "jquery";
+
 // import { DataTable } from "//cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js";
 class CustomerTable extends Component {
   componentDidMount() {
@@ -24,6 +25,29 @@ class CustomerTable extends Component {
               <th scope="col">
                 <div className="title">#</div>
                 <div className="sort">
+                  <i
+                    onClick={(e) => {
+                      e.preventDefault();
+                      this.props.dispatch(sortIdUp());
+                      document.getElementById("down").style.opacity = "0.5";
+                      document.getElementById("up").style.opacity = "1";
+                    }}
+                    id="up"
+                    
+                    class="fa fa-arrow-up"
+                    aria-hidden="true"
+                  ></i>
+                  <i
+                    id="down"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      document.getElementById("up").style.opacity = "0.5";
+                      document.getElementById("down").style.opacity = "1";
+                      this.props.dispatch(sortIdDown());
+                    }}
+                    class="fa fa-arrow-down"
+                    aria-hidden="true"
+                  ></i>
                   {/* <i
                     onClick={() => {
                      

@@ -1,8 +1,10 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { SEARCH } from "../redux/Actions/type";
-
 class navbar extends Component {
+  onChange = (e) => {
+    this.props.searchCustomers(e.target.value);
+  };
   render() {
     return (
       <div>
@@ -17,11 +19,13 @@ class navbar extends Component {
               placeholder="Search"
               aria-label="Search"
               id="search"
+              onChange={this.onChange}
             />
             <button
               className="btn btn-outline-success my-2 my-sm-0"
               onClick={(e) => {
                 e.preventDefault();
+
                 this.props.searchCustomers(
                   document.getElementById("search").value
                 );
@@ -45,4 +49,5 @@ const mapDispatchToProps = (dispatch) => {
     },
   };
 };
+
 export default connect(null, mapDispatchToProps)(navbar);

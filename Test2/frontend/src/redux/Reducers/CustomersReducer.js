@@ -35,6 +35,50 @@ const Customers = (state = stateDefault, action) => {
       state.customers = newarr;
       return { ...state };
     }
+    case "SORT_UP_NAME":
+      {
+        let newarr = [...state.customers];
+
+        newarr.sort(function (a, b) {
+          var nameA = a.companyName.toUpperCase(); // bỏ qua hoa thường
+          var nameB = b.companyName.toUpperCase(); // bỏ qua hoa thường
+          if (nameA < nameB) {
+            return -1;
+          }
+          if (nameA > nameB) {
+            return 1;
+          }
+
+          // name trùng nhau
+          return 0;
+        });
+        // console.log(newarr);
+
+        state.customers = newarr;
+        return { ...state };
+      }
+      break;
+    case "SORT_DOWN_NAME": {
+      let newarr = [...state.customers];
+
+      newarr.sort(function (a, b) {
+        var nameA = a.companyName.toUpperCase(); // bỏ qua hoa thường
+        var nameB = b.companyName.toUpperCase(); // bỏ qua hoa thường
+        if (nameA > nameB) {
+          return -1;
+        }
+        if (nameA < nameB) {
+          return 1;
+        }
+
+        // name trùng nhau
+        return 0;
+      });
+      // console.log(newarr);
+
+      state.customers = newarr;
+      return { ...state };
+    }
     case "SEARCH": {
       let newarr = state.customers.filter((value) => {
         return (

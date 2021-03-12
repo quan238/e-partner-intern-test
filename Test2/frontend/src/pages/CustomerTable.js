@@ -2,7 +2,13 @@ import React, { Component, useState, useEffect } from "react";
 import "../Components/main.css";
 import { connect } from "react-redux";
 import { FETCH_ALL, SORT_UP } from "../redux/Actions/type";
-import { fetchAllFunc, sortIdDown, sortIdUp } from "../redux/Actions/User";
+import {
+  fetchAllFunc,
+  sortIdDown,
+  sortIdUp,
+  sortNameDown,
+  sortNameUp,
+} from "../redux/Actions/User";
 import $ from "jquery";
 
 // import { DataTable } from "//cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js";
@@ -33,7 +39,6 @@ class CustomerTable extends Component {
                       document.getElementById("up").style.opacity = "1";
                     }}
                     id="up"
-                    
                     class="fa fa-arrow-up"
                     aria-hidden="true"
                   ></i>
@@ -58,7 +63,31 @@ class CustomerTable extends Component {
                   {/* <i class="fa fa-arrow-down" aria-hidden="true"></i> */}
                 </div>
               </th>
-              <th scope="col">Company Name</th>
+              <th scope="col">
+                Company Name
+                <i
+                  onClick={(e) => {
+                    e.preventDefault();
+                    this.props.dispatch(sortNameUp());
+                    document.getElementById("down_name").style.opacity = "0.5";
+                    document.getElementById("up_name").style.opacity = "1";
+                  }}
+                  id="up_name"
+                  class="fa fa-arrow-up"
+                  aria-hidden="true"
+                ></i>
+                <i
+                  id="down_name"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    document.getElementById("up_name").style.opacity = "0.5";
+                    document.getElementById("down_name").style.opacity = "1";
+                    this.props.dispatch(sortNameDown());
+                  }}
+                  class="fa fa-arrow-down"
+                  aria-hidden="true"
+                ></i>
+              </th>
               <th scope="col">Contact Name</th>
               <th scope="col">Contact Title</th>
               <th scope="col">Adress</th>

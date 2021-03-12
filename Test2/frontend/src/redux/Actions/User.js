@@ -1,7 +1,7 @@
 import { createAction, createActionType } from ".";
 import { customerServices } from "../../services";
 import { FETCH_ALL } from "./type";
-import { SORT_UP,SORT_DOWN } from "./type";
+import { SORT_UP, SORT_DOWN, SORT_DOWN_NAME, SORT_UP_NAME } from "./type";
 
 // async action
 export const fetchAllFunc = () => {
@@ -29,7 +29,6 @@ export const sortIdUp = () => {
   };
 };
 
-
 export const sortIdDown = () => {
   // return (dispatch)=>{
   //   sortById: (dispatch) => {
@@ -38,5 +37,25 @@ export const sortIdDown = () => {
   // }
   return (dispatch) => {
     dispatch(createActionType(SORT_DOWN));
+  };
+};
+export const sortNameDown = () => {
+  // return (dispatch)=>{
+  //   sortById: (dispatch) => {
+  //     dispatch(createActionType(SORT_UP));
+  //   },
+  // }
+  return (dispatch) => {
+    dispatch(createActionType(SORT_DOWN_NAME));
+  };
+};
+export const sortNameUp = () => {
+  // return (dispatch)=>{
+  //   sortById: (dispatch) => {
+  //     dispatch(createActionType(SORT_UP));
+  //   },
+  // }
+  return (dispatch) => {
+    dispatch(createActionType(SORT_UP_NAME));
   };
 };

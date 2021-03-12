@@ -5,7 +5,6 @@ import Navbar from "./pages/Navbar";
 import CustomersTable from "./pages/CustomerTable";
 import Content from "./pages/Content";
 
-
 function App() {
   return (
     <div>

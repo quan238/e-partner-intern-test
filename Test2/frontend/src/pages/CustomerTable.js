@@ -37,6 +37,8 @@ class CustomerTable extends Component {
                       this.props.dispatch(sortIdUp());
                       document.getElementById("down").style.opacity = "0.5";
                       document.getElementById("up").style.opacity = "1";
+                      document.getElementById("down_name").style.opacity = "1";
+                      document.getElementById("up_name").style.opacity = "1";
                     }}
                     id="up"
                     class="fa fa-arrow-up"
@@ -48,6 +50,8 @@ class CustomerTable extends Component {
                       e.preventDefault();
                       document.getElementById("up").style.opacity = "0.5";
                       document.getElementById("down").style.opacity = "1";
+                      document.getElementById("down_name").style.opacity = "1";
+                      document.getElementById("up_name").style.opacity = "1";
                       this.props.dispatch(sortIdDown());
                     }}
                     class="fa fa-arrow-down"
@@ -71,6 +75,8 @@ class CustomerTable extends Component {
                     this.props.dispatch(sortNameUp());
                     document.getElementById("down_name").style.opacity = "0.5";
                     document.getElementById("up_name").style.opacity = "1";
+                    document.getElementById("down").style.opacity = "1";
+                    document.getElementById("up").style.opacity = "1";
                   }}
                   id="up_name"
                   class="fa fa-arrow-up"
@@ -82,6 +88,8 @@ class CustomerTable extends Component {
                     e.preventDefault();
                     document.getElementById("up_name").style.opacity = "0.5";
                     document.getElementById("down_name").style.opacity = "1";
+                    document.getElementById("down").style.opacity = "1";
+                    document.getElementById("up").style.opacity = "1";
                     this.props.dispatch(sortNameDown());
                   }}
                   class="fa fa-arrow-down"

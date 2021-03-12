@@ -3,7 +3,16 @@ const _ = require("lodash"); // Lodash.
 let stateDefault = {
   customers: [],
 };
-
+const getData = () => {
+  const data = fetch("../../data/customers.json", {
+    headers: {
+      "Content-Type": "application/json",
+      Accept: "application/json",
+    },
+  });
+  console.log(data);
+};
+getData();
 const Customers = (state = stateDefault, action) => {
   switch (action.type) {
     case "FETCH_ALL": {
